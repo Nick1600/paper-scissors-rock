@@ -1,4 +1,4 @@
-const userName = 'Nick'
+const userName = process.argv[2];
 
 const getUserChoice = userInput => {
   userInput = userInput.toLowerCase();
@@ -49,7 +49,7 @@ function determineWinner(userChoice, computerChoice) {
   }
   if (userChoice === 'paper') {
     if (computerChoice === 'scissors') {
-      return 'The computer is victorius!';
+      return 'The computer is victorias!';
     } else {
       return `${userName} wins!`
     }
@@ -58,13 +58,13 @@ function determineWinner(userChoice, computerChoice) {
     if (computerChoice === 'rock') {
       return 'The computer is superior';
     } else {
-      return `${userName}'s intalect knows no bounds!`;
+      return `${userName}'s intellect knows no bounds!`;
     }
   }
 }
 
 function playGame() {
-  const userChoice = getUserChoice('rock');
+  const userChoice = getUserChoice(process.argv[3]);
   const computerChoice = getComputerChoice();
   console.log('You chose: ' + userChoice);
   console.log('The computer chose: ' + computerChoice);
